@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -Wno-cpp  -shared -Wl,-soname,liblibs.so -o liblibs.so CMakeFiles/libs.dir/src/a.cpp.o CMakeFiles/libs.dir/src/b.cpp.o CMakeFiles/libs.dir/src/the_a.cpp.o  -L/usr/local/lib 

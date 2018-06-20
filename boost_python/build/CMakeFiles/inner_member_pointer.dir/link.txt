@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -Wno-cpp  -shared -Wl,-soname,inner_member_pointer.so -o inner_member_pointer.so CMakeFiles/inner_member_pointer.dir/inner_member_pointer.cpp.o  -L/usr/local/lib liblibs.so -lboost_python -lpython2.7 -Wl,-rpath,/usr/local/lib:/home/qie/Git/cpp_python_convert/boost_python/build 

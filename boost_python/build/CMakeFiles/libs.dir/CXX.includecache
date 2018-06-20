@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/a.hpp
+iostream
+-
+
+../include/b.hpp
+iostream
+-
+a.hpp
+../include/a.hpp
+
+../include/the_a.hpp
+a.hpp
+../include/a.hpp
+
+/home/qie/Git/cpp_python_convert/boost_python/src/a.cpp
+iostream
+-
+a.hpp
+/home/qie/Git/cpp_python_convert/boost_python/src/a.hpp
+
+/home/qie/Git/cpp_python_convert/boost_python/src/b.cpp
+b.hpp
+/home/qie/Git/cpp_python_convert/boost_python/src/b.hpp
+a.hpp
+/home/qie/Git/cpp_python_convert/boost_python/src/a.hpp
+the_a.hpp
+/home/qie/Git/cpp_python_convert/boost_python/src/the_a.hpp
+
+/home/qie/Git/cpp_python_convert/boost_python/src/the_a.cpp
+the_a.hpp
+/home/qie/Git/cpp_python_convert/boost_python/src/the_a.hpp
+iostream
+-
+
