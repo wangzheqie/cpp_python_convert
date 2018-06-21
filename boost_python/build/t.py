@@ -4,6 +4,7 @@
 from  inner_member_pointer import PyB
 from  inner_member_pointer import PyTheA
 from  inner_member_pointer import PyA
+from string_member_pointer import C 
 
 b = PyB()
 b.init() # if not init(), b.getA() is None
@@ -17,9 +18,11 @@ a.capImage()
 print(a.getWidth())
 
 # return a PyThA from c++
-the_a = b.getA()
-print(the_a)
-print(type(the_a))
-the_a.capImage()
+# the_a = b.getA()
+# print(the_a)
+# print(type(the_a))
+# the_a.capImage()
 # print(the_a.getWidth())
 
+c = C("hello")
+print(c.a)

@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/qie/Git/cpp_python_convert/boost_python/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -137,6 +137,19 @@ inner_member_pointer/fast:
 .PHONY : inner_member_pointer/fast
 
 #=============================================================================
+# Target rules for targets named string_member_pointer
+
+# Build rule for target.
+string_member_pointer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 string_member_pointer
+.PHONY : string_member_pointer
+
+# fast build rule for target.
+string_member_pointer/fast:
+	$(MAKE) -f CMakeFiles/string_member_pointer.dir/build.make CMakeFiles/string_member_pointer.dir/build
+.PHONY : string_member_pointer/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -148,6 +161,46 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named design_member_pointer
+
+# Build rule for target.
+design_member_pointer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 design_member_pointer
+.PHONY : design_member_pointer
+
+# fast build rule for target.
+design_member_pointer/fast:
+	$(MAKE) -f CMakeFiles/design_member_pointer.dir/build.make CMakeFiles/design_member_pointer.dir/build
+.PHONY : design_member_pointer/fast
+
+design_member_pointer.o: design_member_pointer.cpp.o
+
+.PHONY : design_member_pointer.o
+
+# target to build an object file
+design_member_pointer.cpp.o:
+	$(MAKE) -f CMakeFiles/design_member_pointer.dir/build.make CMakeFiles/design_member_pointer.dir/design_member_pointer.cpp.o
+.PHONY : design_member_pointer.cpp.o
+
+design_member_pointer.i: design_member_pointer.cpp.i
+
+.PHONY : design_member_pointer.i
+
+# target to preprocess a source file
+design_member_pointer.cpp.i:
+	$(MAKE) -f CMakeFiles/design_member_pointer.dir/build.make CMakeFiles/design_member_pointer.dir/design_member_pointer.cpp.i
+.PHONY : design_member_pointer.cpp.i
+
+design_member_pointer.s: design_member_pointer.cpp.s
+
+.PHONY : design_member_pointer.s
+
+# target to generate assembly for a file
+design_member_pointer.cpp.s:
+	$(MAKE) -f CMakeFiles/design_member_pointer.dir/build.make CMakeFiles/design_member_pointer.dir/design_member_pointer.cpp.s
+.PHONY : design_member_pointer.cpp.s
 
 inner_member_pointer.o: inner_member_pointer.cpp.o
 
@@ -284,17 +337,49 @@ src/the_a.cpp.s:
 	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/src/the_a.cpp.s
 .PHONY : src/the_a.cpp.s
 
+string_member_pointer.o: string_member_pointer.cpp.o
+
+.PHONY : string_member_pointer.o
+
+# target to build an object file
+string_member_pointer.cpp.o:
+	$(MAKE) -f CMakeFiles/string_member_pointer.dir/build.make CMakeFiles/string_member_pointer.dir/string_member_pointer.cpp.o
+.PHONY : string_member_pointer.cpp.o
+
+string_member_pointer.i: string_member_pointer.cpp.i
+
+.PHONY : string_member_pointer.i
+
+# target to preprocess a source file
+string_member_pointer.cpp.i:
+	$(MAKE) -f CMakeFiles/string_member_pointer.dir/build.make CMakeFiles/string_member_pointer.dir/string_member_pointer.cpp.i
+.PHONY : string_member_pointer.cpp.i
+
+string_member_pointer.s: string_member_pointer.cpp.s
+
+.PHONY : string_member_pointer.s
+
+# target to generate assembly for a file
+string_member_pointer.cpp.s:
+	$(MAKE) -f CMakeFiles/string_member_pointer.dir/build.make CMakeFiles/string_member_pointer.dir/string_member_pointer.cpp.s
+.PHONY : string_member_pointer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... libs"
 	@echo "... inner_member_pointer"
+	@echo "... string_member_pointer"
 	@echo "... main"
-	@echo "... rebuild_cache"
+	@echo "... design_member_pointer"
+	@echo "... design_member_pointer.o"
+	@echo "... design_member_pointer.i"
+	@echo "... design_member_pointer.s"
 	@echo "... inner_member_pointer.o"
 	@echo "... inner_member_pointer.i"
 	@echo "... inner_member_pointer.s"
@@ -310,6 +395,9 @@ help:
 	@echo "... src/the_a.o"
 	@echo "... src/the_a.i"
 	@echo "... src/the_a.s"
+	@echo "... string_member_pointer.o"
+	@echo "... string_member_pointer.i"
+	@echo "... string_member_pointer.s"
 .PHONY : help
 
 

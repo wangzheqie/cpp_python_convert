@@ -14,14 +14,14 @@ using namespace std;
 
 
 int main(int argc, char** argv){
-    B b;
-    b.init();
-    cout<<b.getWidth()<<endl;
-    cout<<b.getA()<<endl;
+    // B b;
+    // b.init();
+    // cout<<b.getWidth()<<endl;
+    // cout<<b.getA()<<endl;
 
-    TheA *the_a = (TheA*)b.getA(); 
-    the_a->capImage();
-    cout<<the_a->getWidth()<<endl;
+    // TheA *the_a = (TheA*)b.getA(); 
+    // the_a->capImage();
+    // cout<<the_a->getWidth()<<endl;
     return 0;
 }
 

@@ -6,21 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../include/a.hpp
-iostream
--
-
-../include/b.hpp
-iostream
--
-a.hpp
-../include/a.hpp
-
-../include/the_a.hpp
-a.hpp
-../include/a.hpp
-
-/home/qie/Git/cpp_python_convert/boost_python/inner_member_pointer.cpp
+/home/qie/Git/cpp_python_convert/boost_python/design_member_pointer.cpp
 iostream
 -
 boost/python.hpp
@@ -37,10 +23,4 @@ boost/python/return_internal_reference.hpp
 -
 boost/python/return_opaque_pointer.hpp
 -
-a.hpp
-/home/qie/Git/cpp_python_convert/boost_python/a.hpp
-b.hpp
-/home/qie/Git/cpp_python_convert/boost_python/b.hpp
-the_a.hpp
-/home/qie/Git/cpp_python_convert/boost_python/the_a.hpp
 

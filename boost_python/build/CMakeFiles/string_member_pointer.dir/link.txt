@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -Wno-cpp  -shared -Wl,-soname,string_member_pointer.so -o string_member_pointer.so CMakeFiles/string_member_pointer.dir/string_member_pointer.cpp.o  -L/usr/local/lib -lboost_python -lpython2.7 -Wl,-rpath,/usr/local/lib 

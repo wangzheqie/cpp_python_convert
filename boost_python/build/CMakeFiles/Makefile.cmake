@@ -44,5 +44,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/libs.dir/DependInfo.cmake"
   "CMakeFiles/inner_member_pointer.dir/DependInfo.cmake"
+  "CMakeFiles/string_member_pointer.dir/DependInfo.cmake"
   "CMakeFiles/main.dir/DependInfo.cmake"
+  "CMakeFiles/design_member_pointer.dir/DependInfo.cmake"
   )

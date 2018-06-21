@@ -10,6 +10,7 @@
         public:
         void init();
         int getWidth() ;
-        A*  getA();
+        // A*  getA();
+        A const& getA(B const& b) const;
     };
     #endif

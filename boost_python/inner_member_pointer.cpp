@@ -3,6 +3,9 @@
 #include <boost/python/wrapper.hpp>
 #include <boost/python/object.hpp>
 #include <boost/python/instance_holder.hpp>
+#include <boost/python/return_value_policy.hpp>
+#include <boost/python/return_internal_reference.hpp>
+#include <boost/python/return_opaque_pointer.hpp>
 
 #include "a.hpp"
 #include "b.hpp"
@@ -34,7 +37,8 @@ BOOST_PYTHON_MODULE(inner_member_pointer){
     class_<B>("PyB")
         .def("getWidth", &B::getWidth)
         .def("init", &B::init)
-        .def("getA", &B::getA, return_value_policy<manage_new_object>())
+        // .def("getA", &B::getA, return_value_policy<return_by_value>())
+        .def("getA", &B::getA, return_value_policy<copy_const_reference>())
         ;
     
 

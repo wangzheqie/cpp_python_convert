@@ -178,10 +178,16 @@ Project_BINARY_DIR:STATIC=/home/qie/Git/cpp_python_convert/boost_python/build
 Project_SOURCE_DIR:STATIC=/home/qie/Git/cpp_python_convert/boost_python
 
 //Dependencies for the target
+design_member_pointer_LIB_DEPENDS:STATIC=general;libboost_python.so;general;libpython2.7.so;
+
+//Dependencies for the target
 inner_member_pointer_LIB_DEPENDS:STATIC=general;libs;general;libboost_python.so;general;libpython2.7.so;
 
 //Dependencies for target
 libs_LIB_DEPENDS:STATIC=
+
+//Dependencies for the target
+string_member_pointer_LIB_DEPENDS:STATIC=general;libboost_python.so;general;libpython2.7.so;
 
 
 ########################

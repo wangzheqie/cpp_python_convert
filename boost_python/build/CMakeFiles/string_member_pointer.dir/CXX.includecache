@@ -20,7 +20,7 @@ a.hpp
 a.hpp
 ../include/a.hpp
 
-/home/qie/Git/cpp_python_convert/boost_python/inner_member_pointer.cpp
+/home/qie/Git/cpp_python_convert/boost_python/string_member_pointer.cpp
 iostream
 -
 boost/python.hpp
