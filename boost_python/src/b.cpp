@@ -5,7 +5,7 @@ void B::init(){
     A *a = new TheA();
     this->cam1 = new TheA();
 }
-int B::getName() {
+int B::getWidth() {
     return 1000;
 }
 A* B::getA(){

@@ -26,31 +26,18 @@ BOOST_PYTHON_MODULE(inner_member_pointer){
         .def("capImage", pure_virtual(&A::capImage))
         .def("getWidth", pure_virtual(&A::getWidth))
         ;
-    class_<TheA>("PyTheA", init<>())
+    class_<TheA, boost::shared_ptr<TheA> >("PyTheA")
         .def("capImage", &TheA::capImage)
         .def("getWidth", &TheA::getWidth)
         ;
 
     class_<B>("PyB")
-        .def("getName", &B::getName)
+        .def("getWidth", &B::getWidth)
         .def("init", &B::init)
         .def("getA", &B::getA, return_value_policy<manage_new_object>())
         ;
     
+
+
 }
 
-// struct World
-// {
-//     void set(std::string msg) { this->msg = msg; }
-//     std::string greet() { return msg; }
-//     std::string msg;
-// };
-
-
-// BOOST_PYTHON_MODULE(inner_member_pointer)
-// {
-//     class_<World>("World")
-//         .def("greet", &World::greet)
-//         .def("set", &World::set)
-//     ;
-// }

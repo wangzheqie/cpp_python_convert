@@ -42,6 +42,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/inner_member_pointer.dir/DependInfo.cmake"
   "CMakeFiles/libs.dir/DependInfo.cmake"
+  "CMakeFiles/inner_member_pointer.dir/DependInfo.cmake"
+  "CMakeFiles/main.dir/DependInfo.cmake"
   )

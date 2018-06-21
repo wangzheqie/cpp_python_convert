@@ -58,8 +58,8 @@ CMAKE_BINARY_DIR = /home/qie/Git/cpp_python_convert/boost_python/build
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named libs
+
+# Build rule for target.
+libs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 libs
+.PHONY : libs
+
+# fast build rule for target.
+libs/fast:
+	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/build
+.PHONY : libs/fast
+
+#=============================================================================
 # Target rules for targets named inner_member_pointer
 
 # Build rule for target.
@@ -124,17 +137,17 @@ inner_member_pointer/fast:
 .PHONY : inner_member_pointer/fast
 
 #=============================================================================
-# Target rules for targets named libs
+# Target rules for targets named main
 
 # Build rule for target.
-libs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libs
-.PHONY : libs
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-libs/fast:
-	$(MAKE) -f CMakeFiles/libs.dir/build.make CMakeFiles/libs.dir/build
-.PHONY : libs/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 inner_member_pointer.o: inner_member_pointer.cpp.o
 
@@ -162,6 +175,33 @@ inner_member_pointer.s: inner_member_pointer.cpp.s
 inner_member_pointer.cpp.s:
 	$(MAKE) -f CMakeFiles/inner_member_pointer.dir/build.make CMakeFiles/inner_member_pointer.dir/inner_member_pointer.cpp.s
 .PHONY : inner_member_pointer.cpp.s
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 src/a.o: src/a.cpp.o
 
@@ -251,12 +291,16 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... inner_member_pointer"
 	@echo "... libs"
+	@echo "... inner_member_pointer"
+	@echo "... main"
+	@echo "... rebuild_cache"
 	@echo "... inner_member_pointer.o"
 	@echo "... inner_member_pointer.i"
 	@echo "... inner_member_pointer.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... src/a.o"
 	@echo "... src/a.i"
 	@echo "... src/a.s"

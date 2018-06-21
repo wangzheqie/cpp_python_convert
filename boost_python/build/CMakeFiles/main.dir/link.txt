@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wno-cpp   CMakeFiles/main.dir/main.cpp.o  -o main  -L/usr/local/lib -rdynamic liblibs.so -Wl,-rpath,/usr/local/lib:/home/qie/Git/cpp_python_convert/boost_python/build 
